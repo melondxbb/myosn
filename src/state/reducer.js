@@ -5,8 +5,8 @@ export const initialState = {
 
 const reducer = (state, actions) => {
   switch(actions.type){
-    case "":
-      return state;
+    case "SET_LOADING_ON":
+      return {...state, loading: true};
     default: 
       return state;
   };

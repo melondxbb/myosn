@@ -1,15 +1,32 @@
-import { Container, ThemeProvider } from '@material-ui/core';
+import { Container, Hidden, ThemeProvider } from '@material-ui/core';
 import React from 'react';
 import theme from '../../theme';
 import { useStyles } from "./layout.styles";
+import Provider from "../../state/context";
+import SideBar from '../SideBar/SideBar';
+import BottomBar from '../BottomBar/BottomBar';
 
 const Layout = ({ children }) => {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-      <Container className={classes.main}>
-        { children }
-      </Container>
+      <Provider>
+        <div className={classes.layout}>
+          <Hidden xsDown implementation="css">
+            <div className={classes.sideBar}>
+              <SideBar />
+            </div>
+          </Hidden>
+          <Container className={classes.main}>
+            { children }
+          </Container>
+          <Hidden smUp implementation="css">
+            <div className={classes.bottom}>
+              <BottomBar />
+            </div>
+          </Hidden>
+        </div>
+      </Provider>
     </ThemeProvider>
   )
 }

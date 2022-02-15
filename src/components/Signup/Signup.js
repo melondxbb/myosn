@@ -99,9 +99,6 @@ const Signup = () => {
                   Already have an account?
                 </Button>
               </Link>
-              <Box className={classes.links}>
-                <Link to="/" className={classes.link}>Forgot password ?</Link>
-              </Box>
             </form>
           </Grid>
         </Grid>
