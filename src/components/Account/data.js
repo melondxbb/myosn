@@ -9,6 +9,10 @@ export const accountData = [
     key: "Password",
     val: "*********",
   },
+  {
+    key: "Smart Card",
+    val: "0010724656",
+  },
 ];
 
 export const personalData = [
