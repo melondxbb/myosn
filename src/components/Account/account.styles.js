@@ -8,6 +8,11 @@ export const useStyles = makeStyles((theme) => ({
       maxWidth: "100%",
     },
   },
+  logout: {
+    "@media (min-width: 600px)": {
+      display: "none",
+    },
+  },
   infoBox: {
     marginBottom: 15,
   },

@@ -1,8 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Box, Button, Container, Fade, Slide, Grid, Paper, Typography, Divider } from '@material-ui/core';
 import { useStyles } from './account.styles';
 import { accountData, personalData, addressData } from "./data";
+
 const Account = () => {
+  const navigate = useNavigate();
   const classes = useStyles();
   return (
     <Container className={classes.account}>
@@ -118,6 +121,22 @@ const Account = () => {
             ))}
           </Grid>
         </Paper>
+      </Slide>
+
+      <Slide in={true} direction="up">
+        <Box className={classes.logout}>
+          <Button 
+            variant="outlined" 
+            color="primary"
+            fullWidth
+            onClick={() => {
+              localStorage.removeItem("token");
+              navigate("/signin");
+            }}
+          >
+            Logout
+          </Button>
+        </Box>
       </Slide>
     </Container>
   )
