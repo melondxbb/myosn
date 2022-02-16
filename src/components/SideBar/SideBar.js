@@ -12,6 +12,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
+
 import { useStyles } from './sideBar.styles';
 import logo from "../../assets/myosn-logo.png";
 
@@ -69,7 +70,10 @@ const SideBar = () => {
       <Divider />
       <List>
         {['FAQs', 'Renew', 'Sign out'].map((text, index) => (
-          <ListItem button key={text} onClick={() => navigate("/signin")}>
+          <ListItem button key={text} onClick={() => {
+            localStorage.removeItem("token");
+            navigate("/signin");
+          }}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>

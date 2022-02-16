@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Box, Container, Fade, Grid, InputAdornment, TextField, Typography, Button, IconButton } from '@material-ui/core';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Lock from '@material-ui/icons/Lock';
@@ -7,16 +8,19 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 import { useStyles } from './signup.styles';
 import logo from "../../assets/osn-logo.png";
-import { Link } from 'react-router-dom';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const classes = useStyles();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    localStorage.setItem("token", "true");
+    navigate("/account");
   }
 
   return (
