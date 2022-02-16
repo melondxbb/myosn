@@ -11,6 +11,7 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     padding: 20,
     borderRadius: 10,
+    backgroundColor: "#fff",
     boxShadow: "rgb(0 0 0 / 8%) 0px 0px 18px",
   },
   logo: {

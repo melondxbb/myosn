@@ -7,6 +7,8 @@ export const useStyles = makeStyles((theme) => ({
   main: {
     minHeight: "100vh",
     display: "flex",
+    backgroundColor: "#f5f5f5",
+    paddingBottom: 50,
   },
   sideBar: {
     width: "100%",
