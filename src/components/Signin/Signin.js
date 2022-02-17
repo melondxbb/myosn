@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Box, Container, Fade, Grid, InputAdornment, TextField, Typography, Button, IconButton } from '@material-ui/core';
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -8,6 +8,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 import { useStyles } from './signin.styles';
 import logo from "../../assets/osn-logo.png";
+import { isAuthenticated } from '../../auth';
 
 const Signin = () => {
   const [email, setEmail] = useState('');
@@ -15,6 +16,10 @@ const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const classes = useStyles();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if(isAuthenticated()) navigate("/account");
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();

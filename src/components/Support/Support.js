@@ -41,7 +41,7 @@ const Support = () => {
                 variant="h5"
                 className={classes.infoHeadTxt}
               >
-                Have a signal issue?
+                Have a signal issue ?
               </Typography>
               
             </Grid>
