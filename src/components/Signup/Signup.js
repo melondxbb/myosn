@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Box, Container, Fade, Grid, InputAdornment, TextField, Typography, Button, IconButton } from '@material-ui/core';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import Lock from '@material-ui/icons/Lock';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Box, Container, Fade, Grid, InputAdornment, TextField, Typography, Button, IconButton } from "@material-ui/core";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import Lock from "@material-ui/icons/Lock";
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
 
-import { useStyles } from './signup.styles';
+import { useStyles } from "./signup.styles";
 import logo from "../../assets/osn-logo.png";
-import { isAuthenticated } from '../../auth';
+import { isAuthenticated } from "../../auth";
 
 const Signup = () => {
   const [email, setEmail] = useState('');
