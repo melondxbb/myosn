@@ -1,19 +1,19 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import Receipt from '@material-ui/icons/Receipt';
-import Category from '@material-ui/icons/Category';
-import Help from '@material-ui/icons/Help';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import Divider from "@material-ui/core/Divider";
+import Drawer from "@material-ui/core/Drawer";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import Receipt from "@material-ui/icons/Receipt";
+import Category from "@material-ui/icons/Category";
+import Help from "@material-ui/icons/Help";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import MailIcon from "@material-ui/icons/Mail";
 
-import { useStyles } from './sideBar.styles';
+import { useStyles } from "./sideBar.styles";
 import logo from "../../assets/myosn-logo.png";
 
 const SideBar = () => {
@@ -27,7 +27,6 @@ const SideBar = () => {
       <div className={classes.logoContainer}>
         <img src={logo} className={classes.logo} alt="myOsn" />
       </div>
-      {/* <div className={classes.toolbar} /> */}
       <Divider />
       <List>
         <ListItem 
@@ -69,7 +68,7 @@ const SideBar = () => {
       </List>
       <Divider />
       <List>
-        {['FAQs', 'Renew', 'Sign out'].map((text, index) => (
+        {["FAQs", "Renew", "Sign out"].map((text, index) => (
           <ListItem button key={text} onClick={() => {
             localStorage.removeItem("token");
             navigate("/signin");
