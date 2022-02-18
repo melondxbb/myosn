@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import Receipt from '@material-ui/icons/Receipt';
-import Category from '@material-ui/icons/Category';
-import Help from '@material-ui/icons/Help';
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import Receipt from "@material-ui/icons/Receipt";
+import Category from "@material-ui/icons/Category";
+import Help from "@material-ui/icons/Help";
 import { useStyles } from "./bottomBar.styles";
 
 const BottomBar = () => {

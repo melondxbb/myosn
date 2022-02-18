@@ -1,6 +1,6 @@
-import React from 'react';
-import { Container, Slide, Paper, Grid, Typography, Button, Divider, Box, LinearProgress } from '@material-ui/core';
-import { useStyles } from './bills.styles';
+import React from "react";
+import { Container, Slide, Paper, Grid, Typography, Button, Divider, Box, LinearProgress } from "@material-ui/core";
+import { useStyles } from "./bills.styles";
 import { billsData, historyBillData, creditData } from "./data";
 
 const Bills = () => {

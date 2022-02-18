@@ -1,10 +1,9 @@
-import React from 'react';
-import { Container, Fade, Slide, Divider, Grid, Typography, Button, Paper, Box, Card, CardHeader, Avatar, IconButton } from '@material-ui/core';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
-import DeleteIcon from '@material-ui/icons/Delete';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import { useStyles } from './packs.styles';
+import React from "react";
+import { Container, Slide, Divider, Grid, Typography, Button, Paper, Box, CardHeader, Avatar, IconButton } from "@material-ui/core";
+import DeleteIcon from "@material-ui/icons/Delete";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+
+import { useStyles } from "./packs.styles";
 import logo from "../../assets/myosn-logo.png";
 import pinoyLogo from "../../assets/pinoy-logo.jpg";
 import alfaLogo from "../../assets/alfa-logo.png";

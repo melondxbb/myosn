@@ -1,7 +1,7 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Box, Button, Container, Fade, Slide, Grid, Paper, Typography, Divider } from '@material-ui/core';
-import { useStyles } from './account.styles';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Box, Button, Container, Slide, Grid, Paper, Typography, Divider } from "@material-ui/core";
+import { useStyles } from "./account.styles";
 import { accountData, personalData, addressData } from "./data";
 
 const Account = () => {
