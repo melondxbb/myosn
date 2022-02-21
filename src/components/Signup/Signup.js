@@ -19,7 +19,7 @@ const Signup = () => {
 
   useEffect(() => {
     if(isAuthenticated()) navigate("/account");
-  }, []);
+  }, [navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
