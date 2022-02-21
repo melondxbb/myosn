@@ -11,8 +11,8 @@ import logo from "../../assets/osn-logo.png";
 import { isAuthenticated } from "../../auth";
 
 const Signup = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const classes = useStyles();
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ const Signup = () => {
                       fullWidth
                       id="input-email" 
                       label="Email"
-                      type='email' 
+                      type="email" 
                       variant="standard"
                       className={classes.emailInput}
                       value={email} 

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Container, Grid, Typography, Box, Button, Divider, Paper, Fade, Slide, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
-import { useStyles } from './support.styles';
+import React from "react";
+import { Container, Grid, Typography, Button, Divider, Paper, Slide, FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
+import { useStyles } from "./support.styles";
 
 const Support = () => {
   const classes = useStyles();

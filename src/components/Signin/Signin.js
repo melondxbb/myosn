@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Box, Container, Fade, Grid, InputAdornment, TextField, Typography, Button, IconButton } from '@material-ui/core';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import Lock from '@material-ui/icons/Lock';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Box, Container, Fade, Grid, InputAdornment, TextField, Typography, Button, IconButton } from "@material-ui/core";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import Lock from "@material-ui/icons/Lock";
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
 
-import { useStyles } from './signin.styles';
+import { useStyles } from "./signin.styles";
 import logo from "../../assets/osn-logo.png";
-import { isAuthenticated } from '../../auth';
+import { isAuthenticated } from "../../auth";
 
 const Signin = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const classes = useStyles();
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ const Signin = () => {
                       fullWidth
                       id="input-email" 
                       label="Email"
-                      type='email' 
+                      type="email" 
                       variant="standard"
                       className={classes.emailInput}
                       value={email} 
