@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 export const useStyles = makeStyles((theme) => ({
   layout: {
     display: "flex",
+    backgroundColor: "#f5f5f5",
   },
   main: {
     minHeight: "100vh",
