@@ -95,6 +95,7 @@ const Signin = () => {
                 color="primary"
                 fullWidth
                 className={classes.submit}
+                disabled={(email === "") || (password === "")}
               >
                 Sign In
               </Button>
