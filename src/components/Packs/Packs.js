@@ -28,7 +28,7 @@ const Packs = () => {
                   color="primary"
                   className={classes.edit}
                 >
-                  remove
+                  renew
                 </Button>
               </Box>
             </Grid>
@@ -69,7 +69,7 @@ const Packs = () => {
                   color="primary"
                   className={classes.edit}
                 >
-                  Add
+                  Add all
                 </Button>
               </Box>
             </Grid>

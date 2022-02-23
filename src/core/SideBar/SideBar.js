@@ -14,6 +14,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MailIcon from "@material-ui/icons/Mail";
 
 import { useStyles } from "./sideBar.styles";
+import { isAuthenticated } from "../../auth";
 import logo from "../../assets/myosn-logo.png";
 
 const SideBar = () => {
@@ -82,21 +83,25 @@ const SideBar = () => {
   );
 
   return (
-    <div className={classes.root}>
-      <nav className={classes.drawer} aria-label="Left sidebar">
-        
-        <Drawer
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-          variant="permanent"
-          open
-          anchor="left"
-        >
-          {drawer}
-        </Drawer>
-      </nav>
-    </div>
+    <>
+      { isAuthenticated() &&
+        <div className={classes.root}>
+          <nav className={classes.drawer} aria-label="Left sidebar">
+            
+            <Drawer
+              classes={{
+                paper: classes.drawerPaper,
+              }}
+              variant="permanent"
+              open
+              anchor="left"
+            >
+              {drawer}
+            </Drawer>
+          </nav>
+        </div>
+      }
+    </>
   )
 }
 

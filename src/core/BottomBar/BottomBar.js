@@ -6,7 +6,9 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import Receipt from "@material-ui/icons/Receipt";
 import Category from "@material-ui/icons/Category";
 import Help from "@material-ui/icons/Help";
+
 import { useStyles } from "./bottomBar.styles";
+import { isAuthenticated } from "../../auth";
 
 const BottomBar = () => {
   const classes = useStyles();
@@ -25,23 +27,27 @@ const BottomBar = () => {
   }, [location])
 
   return (
-    <BottomNavigation
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-        if(newValue === 0) navigate("/account");
-        if(newValue === 1) navigate("/bills");
-        if(newValue === 2) navigate("/packs");
-        if(newValue === 3) navigate("/support");
-      }}
-      showLabels
-      className={classes.bottomBar}
-    >
-      <BottomNavigationAction label="Account" icon={<AccountCircle />} />
-      <BottomNavigationAction label="Bills" icon={<Receipt />} />
-      <BottomNavigationAction label="Packs" icon={<Category />} />
-      <BottomNavigationAction label="Support" icon={<Help />} />
-    </BottomNavigation>
+    <>
+      { isAuthenticated() &&
+        <BottomNavigation
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+            if(newValue === 0) navigate("/account");
+            if(newValue === 1) navigate("/bills");
+            if(newValue === 2) navigate("/packs");
+            if(newValue === 3) navigate("/support");
+          }}
+          showLabels
+          className={classes.bottomBar}
+        >
+          <BottomNavigationAction label="Account" icon={<AccountCircle />} />
+          <BottomNavigationAction label="Bills" icon={<Receipt />} />
+          <BottomNavigationAction label="Packs" icon={<Category />} />
+          <BottomNavigationAction label="Support" icon={<Help />} />
+        </BottomNavigation>
+      }
+    </>
   );
 }
 

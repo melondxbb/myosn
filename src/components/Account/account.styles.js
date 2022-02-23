@@ -13,6 +13,9 @@ export const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  cta: {
+    marginLeft: 5,
+  },
   infoBox: {
     marginBottom: 15,
   },
