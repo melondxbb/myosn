@@ -5,6 +5,7 @@ export const useStyles = makeStyles((theme) => ({
     padding: 20,
     maxWidth: "80%",
     "@media (max-width: 768px)": {
+      padding: "20px 0",
       maxWidth: "100%",
     },
   },
