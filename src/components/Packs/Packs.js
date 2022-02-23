@@ -4,7 +4,8 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
 import { useStyles } from "./packs.styles";
-import logo from "../../assets/myosn-logo.png";
+import homeLogo from "../../assets/home-logo.png";
+import artLogo from "../../assets/art-logo.png";
 import pinoyLogo from "../../assets/pinoy-logo.jpg";
 import alfaLogo from "../../assets/alfa-logo.png";
 
@@ -35,7 +36,7 @@ const Packs = () => {
             <Divider variant="middle" className={classes.divider} />
             <CardHeader
               avatar={
-                <Avatar aria-label="logo" classes={{ root: classes.avatar}} src={logo} />
+                <Avatar aria-label="logo" classes={{ root: classes.avatar}} src={homeLogo} />
               }
               action={
                 <IconButton aria-label="settings">
@@ -48,6 +49,22 @@ const Packs = () => {
               }}
               title="OSN Home"
               subheader="AED 1300.00 per year"
+            />
+            <CardHeader
+              avatar={
+                <Avatar aria-label="logo" classes={{ root: classes.avatar}} src={artLogo} />
+              }
+              action={
+                <IconButton aria-label="settings">
+                  <DeleteIcon />
+                </IconButton>
+              }
+              classes={{
+                root: classes.cardHead,
+                action: classes.cardAction
+              }}
+              title="Art OptIn"
+              subheader="AED 120.00 per year"
             />
           </Grid>
         </Paper>
