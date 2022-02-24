@@ -46,5 +46,22 @@ export const useStyles = makeStyles((theme) => ({
   bar: {
     borderRadius: 5,
   },
+  dateContainer: {
+    width: "100%",
+  },
+  dateBox: {
+    paddingTop: 16,
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+    gap: 20,
+  },
+  resultNA: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    padding: 20,
+  },
+
   
 }));

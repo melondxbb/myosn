@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, Container, Slide, Collapse, Grid, Paper, Typography, Divider, IconButton } from "@material-ui/core";
 import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
+
 import { useStyles } from "./account.styles";
 import { accountData, personalData, addressData } from "./data";
 import EditModal from "../../core/EditModal/EditModal";

@@ -1,5 +1,7 @@
 import React from "react";
 import { Container, Hidden, ThemeProvider } from "@material-ui/core";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
 
 import { useStyles } from "./layout.styles";
 import theme from "../../theme";
@@ -11,6 +13,7 @@ const Layout = ({ children }) => {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <Provider>
         <div className={classes.layout}>
           <Hidden xsDown implementation="css">
@@ -28,6 +31,7 @@ const Layout = ({ children }) => {
           </Hidden>
         </div>
       </Provider>
+      </MuiPickersUtilsProvider>
     </ThemeProvider>
   )
 }
