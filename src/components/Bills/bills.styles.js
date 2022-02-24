@@ -62,6 +62,16 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
     padding: 20,
   },
+  subHead: {
+    display: "flex",
+    padding: 20,
+  },
+  subHeadTxt: {
+    flex: 1,
+  },
+  subHeadNum: {
+    marginLeft: 14,
+  },
 
   
 }));

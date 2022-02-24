@@ -14,6 +14,27 @@ const Bills = () => {
   return (
     <Container className={classes.bills}>
       <Slide in={true} direction="up">
+        <Paper className={classes.infoBox} variant="outlined">
+          <Box className={classes.subHead}>
+            <Typography
+              variant="body1"
+              className={classes.subHeadTxt}
+            >
+              Your Subscription Account Number
+            </Typography>
+            <Typography
+              variant="body1"
+              color="primary"
+              className={classes.subHeadNum}
+            >
+              8632072
+            </Typography>
+            
+          </Box>
+        </Paper>
+      </Slide>
+
+      <Slide in={true} direction="up">
         <Paper className={classes.infoBox}>
           <Grid container className={classes.infoContainer}>
             <Grid item className={classes.infoHead}>
