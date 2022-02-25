@@ -47,7 +47,7 @@ const EditAccount = (props) => {
           <Typography variant="body2" className={classes.infoKey}>
             {accountInfo[0].key} 
           </Typography>
-          <Tooltip title="Not available">
+          <Tooltip title="Not available" placement="top" enterTouchDelay={0}>
             <InfoIcon className={classes.infoIco} />
           </Tooltip>
         </Box>
@@ -131,7 +131,7 @@ const EditAccount = (props) => {
           <Typography variant="body2" className={classes.infoKey}>
             {accountInfo[2].key} 
           </Typography>
-          <Tooltip title="Not available">
+          <Tooltip title="Not available" placement="top" enterTouchDelay={0}>
             <InfoIcon className={classes.infoIco} />
           </Tooltip>
         </Box>
