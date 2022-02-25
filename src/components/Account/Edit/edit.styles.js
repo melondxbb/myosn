@@ -17,6 +17,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   infoHeadTxt: {
     flex: 1,
+    padding: "8px 0",
     paddingLeft: 15,
   },
   divider: {
