@@ -3,7 +3,6 @@ import { Box, Button, Divider, Grid, TextField, Typography, InputAdornment, Icon
 import InfoIcon from '@material-ui/icons/Info';
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
-
 import { useStyles } from './edit.styles';
 
 const EditAccount = (props) => {
@@ -11,7 +10,6 @@ const EditAccount = (props) => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const { accountInfo, setIsEditable } = props;
-  console.log(props);
   return (
     <Grid container className={classes.infoContainer}>
       <Grid item className={classes.infoHead}>
@@ -39,7 +37,6 @@ const EditAccount = (props) => {
           >
             Save
           </Button>
-          
         </Box>
       </Grid>
       <Divider variant="middle" className={classes.divider} />
@@ -52,10 +49,7 @@ const EditAccount = (props) => {
             <InfoIcon className={classes.infoIco} />
           </Tooltip>
         </Box>
-        <Typography
-          variant="body1"
-          className={classes.infoVal}
-        >
+        <Typography variant="body1" className={classes.infoVal}>
           {accountInfo[0].val}
         </Typography>
       </Grid>

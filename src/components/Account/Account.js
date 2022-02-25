@@ -7,6 +7,7 @@ import { useStyles } from "./account.styles";
 import { accountData, personalData, addressData } from "./data";
 import EditModal from "../../core/EditModal/EditModal";
 import EditAccount from "./Edit/EditAccount";
+import EditAddress from "./Edit/EditAddress";
 
 const Account = () => {
   const [accountInfo, setAccountInfo] = useState(accountData);
@@ -30,7 +31,7 @@ const Account = () => {
     <Container className={classes.account}>
       <Slide in={true} direction="up">
         <Paper className={classes.infoBox}>
-          { isEditable === 0 && (
+          { isEditable !== 1 && (
             <Collapse in={isDroped === 1} collapsedSize={collapsedSize}>
               <Grid container className={classes.infoContainer}>
                 <Grid item className={classes.infoHead}>
@@ -111,6 +112,7 @@ const Account = () => {
                     variant="contained" 
                     color="primary"
                     className={classes.cta}
+                    onClick={() => setIsEditable(2)}
                   >
                     Edit
                   </Button>
@@ -137,49 +139,58 @@ const Account = () => {
 
       <Slide in={true} direction="up">
         <Paper className={classes.infoBox}>
-          <Collapse in={isDroped === 3} collapsedSize={collapsedSize}>
-            <Grid container className={classes.infoContainer}>
-              <Grid item className={classes.infoHead}>
-                <Typography
-                  noWrap
-                  variant="h5"
-                  className={classes.infoHeadTxt}
-                >
-                  Address details
-                </Typography>
-                <Box>
-                  <IconButton 
-                    color="primary" 
-                    aria-label="view more"
-                    onClick={() => setIsDroped((prev) => prev === 3 ? 0 : 3)}
-                  >
-                    <UnfoldMoreIcon />
-                  </IconButton>
-                  <Button 
-                    variant="contained" 
-                    color="primary"
-                    className={classes.cta}
-                  >
-                    Edit
-                  </Button>
-                </Box>
-              </Grid>
-              <Divider variant="middle" className={classes.divider} />
-              {addressData.map((item) => (
-                <Grid item className={classes.infoItem} key={item.key}>
-                  <Typography variant="body2" className={classes.infoKey}>
-                    {item.key}
-                  </Typography>
+          { isEditable !== 3 && (
+            <Collapse in={isDroped === 3} collapsedSize={collapsedSize}>
+              <Grid container className={classes.infoContainer}>
+                <Grid item className={classes.infoHead}>
                   <Typography
-                    variant="body1"
-                    className={classes.infoVal}
+                    noWrap
+                    variant="h5"
+                    className={classes.infoHeadTxt}
                   >
-                    {item.val}
+                    Address details
                   </Typography>
+                  <Box>
+                    <IconButton 
+                      color="primary" 
+                      aria-label="view more"
+                      onClick={() => setIsDroped((prev) => prev === 3 ? 0 : 3)}
+                    >
+                      <UnfoldMoreIcon />
+                    </IconButton>
+                    <Button 
+                      variant="contained" 
+                      color="primary"
+                      className={classes.cta}
+                      onClick={() => setIsEditable(3)}
+                    >
+                      Edit
+                    </Button>
+                  </Box>
                 </Grid>
-              ))}
-            </Grid>
-          </Collapse>
+                <Divider variant="middle" className={classes.divider} />
+                {addressData.map((item) => (
+                  <Grid item className={classes.infoItem} key={item.key}>
+                    <Typography variant="body2" className={classes.infoKey}>
+                      {item.key}
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      className={classes.infoVal}
+                    >
+                      {item.val}
+                    </Typography>
+                  </Grid>
+                ))}
+              </Grid>
+            </Collapse>
+          )}
+          { isEditable === 3 && (
+            <EditAddress 
+              addressData={addressData}
+              setIsEditable={setIsEditable} 
+            />
+          )}
         </Paper>
       </Slide>
 
