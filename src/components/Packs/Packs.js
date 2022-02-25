@@ -18,6 +18,7 @@ const Packs = () => {
           <Grid container className={classes.infoContainer}>
             <Grid item className={classes.infoHead}>
               <Typography
+                noWrap
                 variant="h5"
                 className={classes.infoHeadTxt}
               >
@@ -75,6 +76,7 @@ const Packs = () => {
           <Grid container className={classes.infoContainer}>
             <Grid item className={classes.infoHead}>
               <Typography
+                noWrap
                 variant="h5"
                 className={classes.infoHeadTxt}
               >
