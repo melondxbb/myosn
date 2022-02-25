@@ -6,6 +6,7 @@ import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
 import { useStyles } from "./account.styles";
 import { accountData, personalData, addressData } from "./data";
 import EditModal from "../../core/EditModal/EditModal";
+import EditAccount from "./Edit/EditAccount";
 
 const Account = () => {
   const [accountInfo, setAccountInfo] = useState(accountData);
@@ -75,49 +76,12 @@ const Account = () => {
             </Collapse>
           )}
           { isEditable === 1 && (
-            <Grid container className={classes.infoContainer}>
-              <Grid item className={classes.infoHead}>
-                <Typography
-                  variant="h5"
-                  className={classes.infoHeadTxt}
-                >
-                  Account details
-                </Typography>
-                <Box>
-                  <Button 
-                    variant="outlined" 
-                    color="primary"
-                    className={classes.cancel}
-                    onClick={() => setIsEditable(0)}
-                  >
-                    Cancel
-                  </Button>
-                  <Button 
-                    variant="contained" 
-                    color="primary"
-                    className={classes.cta}
-                    onClick={() => setIsEditable(0)}
-                  >
-                    Save
-                  </Button>
-                  
-                </Box>
-              </Grid>
-              <Divider variant="middle" className={classes.divider} />
-              {accountInfo.map((item) => (
-                <Grid item className={classes.infoItem} key={item.key}>
-                  <Typography variant="body2" className={classes.infoKey}>
-                    {item.key}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    className={classes.infoVal}
-                  >
-                    {item.val}
-                  </Typography>
-                </Grid>
-              ))}
-            </Grid>
+            <>
+            <EditAccount 
+              accountInfo={accountInfo} 
+              setIsEditable={setIsEditable} 
+            />
+            </>
           )}
         </Paper>
       </Slide>
