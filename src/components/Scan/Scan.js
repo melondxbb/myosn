@@ -113,6 +113,40 @@ const Scan = () => {
         </Paper>
       </Slide>
       
+      <Slide in={true} direction="up">
+        <Paper className={classes.infoBox}>
+          <Grid container className={classes.infoContainer}>
+            <Grid item className={classes.infoHead}>
+              <Typography
+                noWrap
+                variant="h5"
+                className={classes.infoHeadTxt}
+              >
+                capture="environment" type="file"
+              </Typography>
+              <Box>
+                <input 
+                  accept="image/*"
+                  className={classes.input}
+                  id="input4"
+                  type="file"
+                  capture="environment"
+                />
+                <label htmlFor="input4">
+                  <Button 
+                    variant="contained" 
+                    color="primary"
+                    className={classes.edit}
+                    component="span"
+                  >
+                    Ios Camera
+                  </Button>
+                </label>
+              </Box>
+            </Grid>
+          </Grid>
+        </Paper>
+      </Slide>
 
     </Container>
   )
