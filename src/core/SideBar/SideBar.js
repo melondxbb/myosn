@@ -12,6 +12,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MailIcon from "@material-ui/icons/Mail";
+import CameraAltIcon from '@material-ui/icons/CameraAlt';
 
 import { useStyles } from "./sideBar.styles";
 import { isAuthenticated } from "../../auth";
@@ -69,8 +70,13 @@ const SideBar = () => {
       </List>
       <Divider />
       <List>
-        <ListItem button onClick={() => navigate("/scan")}>
-          <ListItemIcon>{<MailIcon />}</ListItemIcon>
+        <ListItem 
+          button
+          classes={{ root: classes.listItem}} 
+          selected={location.pathname === "/scan"} 
+          onClick={() => navigate("/scan")} 
+        >
+          <ListItemIcon>{<CameraAltIcon />}</ListItemIcon>
           <ListItemText primary={"Camera"} />
         </ListItem>
         {["FAQs", "Renew", "Sign out"].map((text, index) => (
