@@ -1,24 +1,13 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme) => ({
-  account: {
+  scan: {
     padding: 20,
     maxWidth: "80%",
     "@media (max-width: 768px)": {
       padding: "20px 0",
       maxWidth: "100%",
     },
-  },
-  logout: {
-    "@media (min-width: 600px)": {
-      display: "none",
-    },
-  },
-  scan: {
-    marginBottom: 10
-  },
-  cta: {
-    marginLeft: 5,
   },
   infoBox: {
     marginBottom: 15,
@@ -33,23 +22,10 @@ export const useStyles = makeStyles((theme) => ({
   },
   infoHeadTxt: {
     flex: 1,
-    padding: "8px 0",
     paddingLeft: 15,
   },
-  divider: {
-    width: "100%",
-    margin: "10px 0",
-  },
-  infoItem: {
-    padding: 15,
-    width: "100%",
-  },
-  infoKey: {
-    paddingBottom: 8,
-    color: "rgba(0, 0, 0, 0.4)",
-  },
-  infoVal: {
-    color: "#202020",
+  input: {
+    display: "none",
   },
   
 }));

@@ -200,6 +200,16 @@ const Account = () => {
             variant="outlined" 
             color="primary"
             fullWidth
+            onClick={() => navigate("/scan")}
+            className={classes.scan}
+          >
+            Camera
+          </Button>
+
+          <Button 
+            variant="outlined" 
+            color="primary"
+            fullWidth
             onClick={() => {
               localStorage.removeItem("token");
               navigate("/signin");

@@ -7,6 +7,7 @@ import Bills from "./components/Bills/Bills";
 import Packs from "./components/Packs/Packs";
 import Support from "./components/Support/Support";
 import PrivateRoute from "./auth/PrivateRoute";
+import Scan from "./components/Scan/Scan";
 
 function App() {
   return (
@@ -33,6 +34,11 @@ function App() {
         <Route path="/support" element={
           <PrivateRoute>
             <Support />
+          </PrivateRoute>
+        } />
+        <Route path="/scan" element={
+          <PrivateRoute>
+            <Scan />
           </PrivateRoute>
         } />
       </Routes>

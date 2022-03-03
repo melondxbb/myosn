@@ -69,6 +69,10 @@ const SideBar = () => {
       </List>
       <Divider />
       <List>
+        <ListItem button onClick={() => navigate("/scan")}>
+          <ListItemIcon>{<MailIcon />}</ListItemIcon>
+          <ListItemText primary={"Camera"} />
+        </ListItem>
         {["FAQs", "Renew", "Sign out"].map((text, index) => (
           <ListItem button key={text} onClick={() => {
             localStorage.removeItem("token");
