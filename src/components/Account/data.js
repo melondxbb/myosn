@@ -50,7 +50,7 @@ export const personalData = [
   },
   {
     key: "Residence type",
-    val: "Permanent",
+    val: "Villa",
   },
   {
     key: "Nationality",
