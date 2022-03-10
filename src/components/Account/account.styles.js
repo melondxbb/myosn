@@ -51,5 +51,10 @@ export const useStyles = makeStyles((theme) => ({
   infoVal: {
     color: "#202020",
   },
+  optItem: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
   
 }));

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, Container, Slide, Collapse, Grid, Paper, Typography, Divider, IconButton } from "@material-ui/core";
+import { Box, Button, Container, Slide, Collapse, Grid, Paper, Typography, Switch, Divider, IconButton } from "@material-ui/core";
 import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
 
 import { useStyles } from "./account.styles";
@@ -15,6 +15,31 @@ const Account = () => {
   const [modalBody, setModalBody] = useState(<></>);
   const [isEditable, setIsEditable] = useState(0);
   const [isDroped, setIsDroped] = useState(0);
+
+  const [contactWay, setContactWay] = useState({
+    sms1: true,
+    email1: true,
+    bmail1: true,
+    sms2: false,
+    email2: true,
+    bmail2: true,
+  });
+
+  const handleSwitch = (event) => {
+    setContactWay({ ...contactWay, [event.target.name]: event.target.checked });
+  };
+
+  const handleEnableAll = () => {
+    setContactWay({
+      sms1: true,
+      email1: true,
+      bmail1: true,
+      sms2: true,
+      email2: true,
+      bmail2: true,
+    });
+  }
+  
 
   const collapsedSize = 190;
 
@@ -149,6 +174,8 @@ const Account = () => {
         </Paper>
       </Slide>
 
+      
+
       <Slide in={true} direction="up">
         <Paper className={classes.infoBox}>
           { isEditable !== 3 && (
@@ -203,6 +230,146 @@ const Account = () => {
               setIsEditable={setIsEditable} 
             />
           )}
+        </Paper>
+      </Slide>
+
+      <Slide in={true} direction="up">
+        <Paper className={classes.infoBox}>
+            <Collapse in={isDroped === 4} collapsedSize={collapsedSize}>
+            <Grid container className={classes.infoContainer}>
+                <Grid item className={classes.infoHead}>
+                  <Typography
+                    noWrap
+                    variant="h5"
+                    className={classes.infoHeadTxt}
+                  >
+                    Communication preferences
+                  </Typography>
+                  <Box>
+                    <IconButton 
+                      color="primary" 
+                      aria-label="view more"
+                      onClick={() => setIsDroped((prev) => prev === 4 ? 0 : 4)}
+                    >
+                      <UnfoldMoreIcon />
+                    </IconButton>
+                    <Button 
+                      variant="contained" 
+                      color="primary"
+                      className={classes.cta}
+                      onClick={handleEnableAll}
+                    >
+                      Enable all
+                    </Button>
+                  </Box>
+                </Grid>
+                <Divider variant="middle" className={classes.divider} />
+                <Grid item className={classes.infoItem}>
+                  <Typography variant="body2" className={classes.infoKey}>
+                    Recommend me new movies, series and events
+                  </Typography>
+                  <Box className={classes.optItem}>
+                    <Typography
+                      variant="body1"
+                      className={classes.optVal}
+                    >
+                      Via SMS
+                    </Typography>
+                    <Switch
+                      checked={contactWay.sms1}
+                      onChange={handleSwitch}
+                      color="primary"
+                      name="sms1"
+                      inputProps={{ 'aria-label': 'primary checkbox' }}
+                    />
+                  </Box>
+                  <Divider variant="middle" className={classes.divider} />
+                  <Box className={classes.optItem}>
+                    <Typography
+                      variant="body1"
+                      className={classes.optVal}
+                    >
+                      Via Email
+                    </Typography>
+                    <Switch
+                      checked={contactWay.email1}
+                      onChange={handleSwitch}
+                      color="primary"
+                      name="email1"
+                      inputProps={{ 'aria-label': 'primary checkbox' }}
+                    />
+                  </Box>
+                  <Divider variant="middle" className={classes.divider} />
+                  <Box className={classes.optItem}>
+                    <Typography
+                      variant="body1"
+                      className={classes.optVal}
+                    >
+                      Via Bmail
+                    </Typography>
+                    <Switch
+                      checked={contactWay.bmail1}
+                      onChange={handleSwitch}
+                      color="primary"
+                      name="bmail1"
+                      inputProps={{ 'aria-label': 'primary checkbox' }}
+                    />
+                  </Box>
+                </Grid>
+                <Grid item className={classes.infoItem}>
+                  <Typography variant="body2" className={classes.infoKey}>
+                    Inform me about promotions and competitions
+                  </Typography>
+                  <Box className={classes.optItem}>
+                    <Typography
+                      variant="body1"
+                      className={classes.optVal}
+                    >
+                      Via SMS
+                    </Typography>
+                    <Switch
+                      checked={contactWay.sms2}
+                      onChange={handleSwitch}
+                      color="primary"
+                      name="sms2"
+                      inputProps={{ 'aria-label': 'primary checkbox' }}
+                    />
+                  </Box>
+                  <Divider variant="middle" className={classes.divider} />
+                  <Box className={classes.optItem}>
+                    <Typography
+                      variant="body1"
+                      className={classes.optVal}
+                    >
+                      Via Email
+                    </Typography>
+                    <Switch
+                      checked={contactWay.email2}
+                      onChange={handleSwitch}
+                      color="primary"
+                      name="email2"
+                      inputProps={{ 'aria-label': 'primary checkbox' }}
+                    />
+                  </Box>
+                  <Divider variant="middle" className={classes.divider} />
+                  <Box className={classes.optItem}>
+                    <Typography
+                      variant="body1"
+                      className={classes.optVal}
+                    >
+                      Via Bmail
+                    </Typography>
+                    <Switch
+                      checked={contactWay.bmail2}
+                      onChange={handleSwitch}
+                      color="primary"
+                      name="bmail2"
+                      inputProps={{ 'aria-label': 'primary checkbox' }}
+                    />
+                  </Box>
+                </Grid>
+              </Grid>
+            </Collapse>
         </Paper>
       </Slide>
 
