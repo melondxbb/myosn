@@ -56,5 +56,18 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "space-between",
   },
+  cardLogo: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+  },
+  cardItem: {
+    display: "flex",
+    alignItems: "center",
+  },
+  cardEnd: {
+    flex: 1,
+    marginLeft: 5,
+    fontWeight: "bold",
+  },
   
 }));

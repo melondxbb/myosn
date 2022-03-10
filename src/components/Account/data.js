@@ -76,3 +76,19 @@ export const addressData = [
     val: "22338",
   },
 ];
+
+export const paymentData = [
+  {
+    key: "Card number",
+    val: "************2155",
+  },
+  {
+    key: "Name",
+    val: "Chris Hems",
+  },
+  {
+    key: "Expiry",
+    val: "Sep, 2026",
+  },
+  
+];

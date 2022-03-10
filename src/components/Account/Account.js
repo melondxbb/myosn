@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, Container, Slide, Collapse, Grid, Paper, Typography, Switch, Divider, IconButton } from "@material-ui/core";
+import { Box, Button, Container, Slide, Collapse, Grid, Paper, Typography, Switch, Avatar, Divider, IconButton } from "@material-ui/core";
 import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
 
 import { useStyles } from "./account.styles";
-import { accountData, personalData, addressData } from "./data";
+import { accountData, personalData, addressData, paymentData } from "./data";
 import EditModal from "../../core/EditModal/EditModal";
 import EditAccount from "./Edit/EditAccount";
 import EditAddress from "./Edit/EditAddress";
 import EditPersonal from "./Edit/EditPersonal";
+import cardLogo from "../../assets/icon-mastercard.svg";
 
 const Account = () => {
   const [accountInfo, setAccountInfo] = useState(accountData);
@@ -370,6 +371,74 @@ const Account = () => {
                 </Grid>
               </Grid>
             </Collapse>
+        </Paper>
+      </Slide>
+
+      <Slide in={true} direction="up">
+        <Paper className={classes.infoBox}>
+          <Collapse in={isDroped === 5} collapsedSize={collapsedSize}>
+            <Grid container className={classes.infoContainer}>
+              <Grid item className={classes.infoHead}>
+                <Typography
+                  noWrap
+                  variant="h5"
+                  className={classes.infoHeadTxt}
+                >
+                  Payment details
+                </Typography>
+                <Box>
+                  <IconButton 
+                    color="primary" 
+                    aria-label="view more"
+                    onClick={() => setIsDroped((prev) => prev === 5 ? 0 : 5)}
+                  >
+                    <UnfoldMoreIcon />
+                  </IconButton>
+                  <Button 
+                    variant="contained" 
+                    color="primary"
+                    className={classes.cta}
+                    // onClick={handleEnableAll}
+                  >
+                    Edit
+                  </Button>
+                </Box>
+              </Grid>
+              <Divider variant="middle" className={classes.divider} />
+              <Grid item className={classes.infoItem}>
+                <Box className={classes.cardItem}>
+                  <Typography
+                    variant="body1"
+                    className={classes.cardVal}
+                  >
+                    Card ending in
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    className={classes.cardEnd}
+                  >
+                    2155
+                  </Typography>
+                  <Avatar aria-label="logo" title="mastercard" className={classes.cardLogo} src={cardLogo} />
+                </Box>
+              </Grid>
+              <Divider variant="middle" className={classes.divider} />
+              {paymentData.map((item) => (
+                <Grid item className={classes.infoItem} key={item.key}>
+                  <Typography variant="body2" className={classes.infoKey}>
+                    {item.key}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    className={classes.infoVal}
+                  >
+                    {item.val}
+                  </Typography>
+                </Grid>
+              ))}
+                
+            </Grid>
+          </Collapse>
         </Paper>
       </Slide>
 
