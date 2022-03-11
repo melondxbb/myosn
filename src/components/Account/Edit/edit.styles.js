@@ -53,5 +53,13 @@ export const useStyles = makeStyles((theme) => ({
     gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
     gap: 20,
   },
+  bkFieldBoxA: {
+    marginBottom: 20,
+  },
+  bkFieldBoxB: {
+    display: "grid",
+    gridTemplateColumns: "1fr 100px",
+    gap: 10,
+  },
   
 }));
