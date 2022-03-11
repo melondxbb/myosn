@@ -56,6 +56,10 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "space-between",
   },
+  cardBox: {
+    padding: "0 15px",
+    width: "100%",
+  },
   cardLogo: {
     width: theme.spacing(7),
     height: theme.spacing(7),

@@ -244,7 +244,7 @@ const Account = () => {
                     variant="h5"
                     className={classes.infoHeadTxt}
                   >
-                    Communication preferences
+                    Contact preferences
                   </Typography>
                   <Box>
                     <IconButton 
@@ -405,7 +405,7 @@ const Account = () => {
                 </Box>
               </Grid>
               <Divider variant="middle" className={classes.divider} />
-              <Grid item className={classes.infoItem}>
+              <Grid item className={classes.cardBox}>
                 <Box className={classes.cardItem}>
                   <Typography
                     variant="body1"
