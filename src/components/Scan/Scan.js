@@ -58,7 +58,6 @@ const Scan = () => {
                   accept="image/*"
                   className={classes.input}
                   id="input2"
-                  multiple
                   type="file"
                   capture="camera"
                 />

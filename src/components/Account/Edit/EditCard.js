@@ -60,6 +60,7 @@ const EditCard = (props) => {
         <Grid container justifyContent="center" className={classes.bkContainer}>
           <Grid item xs={12} className={classes.bkFieldBoxA}>
             <TextField 
+              autoFocus
               fullWidth
               label="Card Number"
               variant="outlined"
