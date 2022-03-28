@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Grid, Paper, Box, Slide, Typography, Button } from '@material-ui/core';
 import { useStyles } from './scan.styles';
 
 const Scan = () => {
   const classes = useStyles();
+
+  const reqCam = () => {
+    if("mediaDevices" in navigator && "getUserMedia" in navigator.mediaDevices){
+      console.log("Ask camera access.");
+
+      navigator.mediaDevices.getUserMedia({video: true})
+      .then(() => alert("Permission Granted !"))
+      .catch(() => alert("Permission Denied !"));
+    }
+  }
+  
+
+  useEffect(() => {
+    reqCam();
+  }, []);
   return (
     <Container className={classes.scan}>
 
