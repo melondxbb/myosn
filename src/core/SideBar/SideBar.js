@@ -1,5 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -26,9 +28,19 @@ const SideBar = () => {
 
   const drawer = (
     <div className={classes.drawerContent}>
-      <div className={classes.logoContainer}>
-        <img src={logo} className={classes.logo} alt="myOsn" />
-      </div>
+      <Box className={classes.logoContainer}>
+        <Box className={classes.logo}>
+          <img src={logo} className={classes.logoImg} alt="myOsn" />
+        </Box>
+        <Box>
+          <Typography variant="caption" gutterBottom>
+            Smart card
+          </Typography>
+          <Typography variant="subtitle2">
+            0015323215
+          </Typography>
+        </Box>
+      </Box>
       <Divider />
       <List>
         <ListItem 

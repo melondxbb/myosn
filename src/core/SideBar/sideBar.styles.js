@@ -14,14 +14,23 @@ export const useStyles = makeStyles((theme) => ({
   logoContainer: {
     width: "100%",
     minHeight: 140,
-    display: "grid",
-    placeContent: "center"
+    display: "flex",
+    flexDirection: "column",
+    padding: "10px",
+    boxSizing: "border-box",
   },
   logo: {
     display: "block",
     width: "auto",
-    height: 100,
+    maxWidth: 100,
+    height: "auto",
+    maxHeight: 100,
     margin: "0 auto",
+    flex: 1,
+    padding: "10px 0",
+  },
+  logoImg: {
+    width: "100%",
   },
   drawer: {
     [theme.breakpoints.up('sm')]: {
